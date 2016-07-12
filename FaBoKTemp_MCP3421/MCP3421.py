@@ -33,17 +33,19 @@ CONFIG_GAIN_X2         = 0b00000001
 CONFIG_GAIN_X4         = 0b00000010
 CONFIG_GAIN_X8         = 0b00000011
 
+## smbus
 bus = smbus.SMBus(1)
 
-## FaBoKTemp
-#  FaBo KTemp I2C Controll class
+## FaBo KTemp I2C Controll class
 class MCP3421:
 
     config = 0x00
 
     ## Constructor
-    def __init__(self):
-        self.address = self.deviceSerch()
+    #  @param [in] address MCP3421 I2C slave address default:0x68
+    def __init__(self, address=SLAVE_ADDRESS[0]):
+#        self.address = self.deviceSerch()
+        self.address = address
         self.configuration()
 
     ## Device serch

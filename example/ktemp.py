@@ -12,11 +12,15 @@
 
 import FaBoKTemp_MCP3421
 import time
+import sys
 
 mcp3421 = FaBoKTemp_MCP3421.MCP3421()
 
-while True:
-    temp = mcp3421.read()
-    print "KTemp = ", (temp)
-    print
-    time.sleep(1)
+try:
+    while True:
+        temp = mcp3421.read()
+        print "KTemp = ", (temp)
+        time.sleep(0.5)
+
+except KeyboardInterrupt:
+    sys.exit()
