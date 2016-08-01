@@ -14,6 +14,7 @@ import FaBoKTemp_MCP3421
 import time
 import sys
 
+# mcp3421 = FaBoKTemp_MCP3421.MCP3421(0x69)
 mcp3421 = FaBoKTemp_MCP3421.MCP3421()
 
 try:
